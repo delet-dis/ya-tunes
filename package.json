@@ -1,0 +1,25 @@
+{
+  "name": "ya-tunes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html --open",
+    "build": "parcel build index.html -d docs --public-url ./"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/delet-dis/ya-tunes.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/delet-dis/ya-tunes/issues"
+  },
+  "homepage": "https://github.com/delet-dis/ya-tunes#readme",
+  "devDependencies": {
+    "parcel": "^1.12.4"
+  }
+}
