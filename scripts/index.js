@@ -3,6 +3,14 @@ import {
   radioPlayerInit
 } from './radioPlayer.js';
 
+import {
+  musicPlayerInit
+} from './musicPlayer.js';
+
+import {
+  videoPlayer
+} from './videoPlayer.js';
+
 //объявление элементов страницы
 const playerBtn = document.querySelectorAll('.player-btn'),
   playerBlock = document.querySelectorAll('.player-block'),
@@ -26,4 +34,3 @@ playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {
   playerBlock[i].classList.add('active');
 }));
 
-radioPlayerInit();
