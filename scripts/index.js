@@ -8,7 +8,7 @@ import {
 } from './musicPlayer.js';
 
 import {
-  videoPlayer
+  videoPlayerInit
 } from './videoPlayer.js';
 
 //объявление элементов страницы
@@ -34,3 +34,5 @@ playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {
   playerBlock[i].classList.add('active');
 }));
 
+//вызов кода из видеоплеера
+videoPlayerInit();
