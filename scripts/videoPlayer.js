@@ -5,7 +5,7 @@ export const videoPlayerInit = () => {
     const videoPlayer = document.querySelector('.video-player'),
       videoButtonPlay = document.querySelector('.video-button__play'),
       videoButtonStop = document.querySelector('.video-button__stop'),
-      videoTimePassed = document.querySelector('.vitop-time__passed'),
+      videoTimePassed = document.querySelector('.video-time__passed'),
       videoProgress = document.querySelector('.video-progress'),
       videoTimeTotal = document.querySelector('.video-time__total');
 
@@ -19,6 +19,9 @@ export const videoPlayerInit = () => {
         videoButtonPlay.classList.remove('fa-play');
       }
     }
+
+    //функция добавления нулей
+    const addZero = n => n < 10 ? '0' + n : n;
 
     //функция включения/выключения воспроизведения
     const togglePlayer = () => {
@@ -40,5 +43,30 @@ export const videoPlayerInit = () => {
     videoButtonPlay.addEventListener('click', togglePlayer);
 
     //слушатель для остановки воспроизведения
-    videoButtonStop.addEventListener('click', playerStop)
+    videoButtonStop.addEventListener('click', playerStop);
+
+    //слушатель времени
+    videoPlayer.addEventListener('timeupdate', () => {
+      const currentTime = videoPlayer.currentTime,
+        duration = videoPlayer.duration;
+
+      videoProgress.value = (currentTime / duration) * 100;
+
+      let minutesPassed = Math.floor(currentTime / 60);
+      let secondsPassed = Math.floor(currentTime % 60);
+      
+      let minutesTotal = Math.floor(duration / 60);
+      let secondsTotal = Math.floor(duration % 60);
+
+      videoTimePassed.textContent = `${addZero(minutesPassed)}:${addZero(secondsPassed)}`;
+      videoTimeTotal.textContent = `${addZero(minutesTotal)}:${addZero(secondsTotal)}`;
+  });
+
+  //слушатель изменения значения у range input
+  videoProgress.addEventListener('change', () => {
+    const duration = videoPlayer.duration,
+      value = videoProgress.value;
+
+    videoPlayer.currentTime = (value * duration) / 100;
+  });
 };
