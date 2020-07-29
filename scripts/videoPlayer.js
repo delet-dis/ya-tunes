@@ -7,7 +7,8 @@ export const videoPlayerInit = () => {
       videoButtonStop = document.querySelector('.video-button__stop'),
       videoTimePassed = document.querySelector('.video-time__passed'),
       videoProgress = document.querySelector('.video-progress'),
-      videoTimeTotal = document.querySelector('.video-time__total');
+      videoTimeTotal = document.querySelector('.video-time__total'),
+      videoVolume = document.querySelector('.video-volume');
 
     //функция переключения классов у кнопки воспроизведения
     const toggleIcon = () => {
@@ -69,4 +70,9 @@ export const videoPlayerInit = () => {
 
     videoPlayer.currentTime = (value * duration) / 100;
   });
+
+  //слушатель изменения громкости
+  videoVolume.addEventListener('input' , () => {
+    videoPlayer.volume = videoVolume.value / 100;
+  })
 };
