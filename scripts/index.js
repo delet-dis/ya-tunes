@@ -34,5 +34,6 @@ playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {
   playerBlock[i].classList.add('active');
 }));
 
-//вызов кода из видеоплеера
+//вызов кода из плееров
 videoPlayerInit();
+radioPlayerInit();
