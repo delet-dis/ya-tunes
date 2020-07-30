@@ -37,3 +37,4 @@ playerBtn.forEach((btn, i) => btn.addEventListener('click', () => {
 //вызов кода из плееров
 videoPlayerInit();
 radioPlayerInit();
+musicPlayerInit();
