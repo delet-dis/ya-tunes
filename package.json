@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/delet-dis/ya-tunes#readme",
   "devDependencies": {
-    "parcel": "^1.12.4"
+    "parcel": "^2.8.2"
   }
 }
